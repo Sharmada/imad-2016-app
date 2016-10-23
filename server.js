@@ -15,29 +15,56 @@ var articleOne = {
                 <p>As i am running in short of time this article will be a complete mess.Later, it will be build in such a way that it makes atleast a little bit of sense ;)</p>
     `
        };
-       
-var htmlTemplate = 
-
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-app.get('/article-one', function (req,res){
-    res.sendFile(path.join(__dirname, 'article-one.html'));
-});
-app.get('/article-two', function (req,res){
-    res.sendFile(path.join(__dirname, 'article-two.html'));
-});
-app.get('/article-three', function (req,res){
-    res.sendFile(path.join(__dirname, 'article-three.html'));
-});
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-
-app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
-});
+    var htmlTemplate = {
+        <html>
+    <head>
+        <title>
+             ${title}
+        </title>
+        <meta name="viewport" content= "width=device-width , initial-scale=1" />
+         <link href="/ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class ="container">
+                <div>
+                 <a href="/">Go to home</a>
+              </div>
+              <hr/>
+              <h3> ${heading} </h3>
+              <div> ${date}</div>
+              <div>
+                  ${content}
+                </div>
+            </div>
+        </body>
+</html>
+        
+    var title= data.title;
+    var cotent= data.content;
+    var date= data.date;
+    var heading= data.heading;
+}
+return htmlTemplate;
+}
+    app.get('/', function (req, res) {
+      res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+    });
+    app.get('/article-one', function (req,res){
+        res.sendFile(path.join(__dirname, 'article-one.html'));
+    });
+    app.get('/article-two', function (req,res){
+        res.sendFile(path.join(__dirname, 'article-two.html'));
+    });
+    app.get('/article-three', function (req,res){
+        res.sendFile(path.join(__dirname, 'article-three.html'));
+    });
+    app.get('/ui/style.css', function (req, res) {
+      res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+    });
+    
+    app.get('/ui/madi.png', function (req, res) {
+      res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+    });
 
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
