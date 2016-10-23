@@ -5,6 +5,20 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne = {
+    title : 'Article-one | sharmada' ,
+    heading : 'Article-one',
+    date : 'oct 22,2016',
+    content : `
+                <p> Hello everyone. This is article one and by reading this text you can do nothing but just waste time :P </p>
+                <p> So,please do not take much time to read this. </p>
+                <p>As i am running in short of time this article will be a complete mess.Later, it will be build in such a way that it makes atleast a little bit of sense ;)</p>
+    `
+       };
+       
+var htmlTemplate = 
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
