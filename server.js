@@ -61,16 +61,8 @@ var articles = {
 return htmlTemplate;
 }
     app.get('/:articleName', function (req, res) {
+        var articleName=req.params.articleName;
       res.send(createTemplate(article[articleName]));
-    });
-    app.get('/article-one', function (req,res){
-        res.sendFile(path.join(__dirname, 'article-one.html'));
-    });
-    app.get('/article-two', function (req,res){
-        res.sendFile(path.join(__dirname, 'article-two.html'));
-    });
-    app.get('/article-three', function (req,res){
-        res.sendFile(path.join(__dirname, 'article-three.html'));
     });
     app.get('/ui/style.css', function (req, res) {
       res.sendFile(path.join(__dirname, 'ui', 'style.css'));
