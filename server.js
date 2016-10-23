@@ -15,9 +15,14 @@ var articleOne = {
                 <p>As i am running in short of time this article will be a complete mess.Later, it will be build in such a way that it makes atleast a little bit of sense ;)</p>
     `
        };
-    var htmlTemplate = {
+     function createTemplate (data) {
+        var title = data.title;
+        var content = data.content;
+        var date = data.date;
+        var heading = data.heading;
+    var htmlTemplate = { `
         <html>
-    <head>
+     <head>
         <title>
              ${title}
         </title>
@@ -29,25 +34,18 @@ var articleOne = {
                 <div>
                  <a href="/">Go to home</a>
               </div>
-              <hr/>
-              <h3> ${heading} </h3>
-              <div> ${date}</div>
-              <div>
-                  ${content}
-                </div>
+               <hr/>
+               <h3> ${heading} </h3>
+              <div> ${date} </div>
+              <div>${content}</div>
             </div>
         </body>
 </html>
-        
-    var title= data.title;
-    var cotent= data.content;
-    var date= data.date;
-    var heading= data.heading;
-}
+` ;
 return htmlTemplate;
 }
     app.get('/', function (req, res) {
-      res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+      res.send(createTemplate(articleOne));
     });
     app.get('/article-one', function (req,res){
         res.sendFile(path.join(__dirname, 'article-one.html'));
