@@ -12,17 +12,15 @@ var articles = {
     content : `
                 <p> Hello everyone. This is article one and by reading this text you can do nothing but just waste time :P </p>
                 <p> So,please do not take much time to read this. </p>
-                <p>As i am running in short of time this article will be a complete mess.Later, it will be build in such a way that it makes atleast a little bit of sense ;)</p>
-    `
-       },
+                <p>As i am running in short of time this article will be a complete mess.Later, it will be build in such a way that it makes atleast a little bit of sense ;)</p>`
+      },
   'article-two' : {
       title : 'Article-two | sharmada' ,
     heading : 'Article-two',
     date : 'oct 18,2016',
     content : `
                 <p> Hello everyone. This is article two and by reading this text you can do nothing but just waste time :P </p>
-    `
-  },
+    `},
   'article-three ' : {
       title : 'Article-three | sharmada' ,
     heading : 'Article-three',
